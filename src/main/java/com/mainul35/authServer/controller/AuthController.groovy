@@ -11,12 +11,12 @@ public class AuthController {
 
     @GetMapping("/login")
     public String login(Model model) {
-        return "/auth/login";
+        return "/auth/login"
     }
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("msg", "demo msg");
-        return "/index";
+        model.addAttribute("msg", "demo msg")
+        return "/index"
     }
 }
