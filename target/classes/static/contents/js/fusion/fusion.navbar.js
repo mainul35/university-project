@@ -1,1 +1,0 @@
-Fusion.body.navbar = document.querySelector("")
