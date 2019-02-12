@@ -1,8 +1,10 @@
 Fusion = (function () {
     return {
-        body: {
+        appBody: {
+            initialize: function(){
+
+            },
             content: document.querySelector("#root"),
-            navbar: document.querySelector(".navbar")
         },
     };
 }())
