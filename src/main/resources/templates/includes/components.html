@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<th:block th:fragment="css">
+<th:block th:fragment="bootstrapCSS">
     <link th:href="@{/contents/css/bootstrap.css}" rel="stylesheet" type="text/css"/>
 </th:block>
-<th:block th:fragment="js">
+<th:block th:fragment="bootstrapJS">
     <script th:src="@{/contents/js/jquery-3.2.1.min.js}"></script>
     <script th:src="@{/contents/js/bootstrap.js}"></script>
     <script th:src="@{/contents/js/popper.min.js}"></script>
+</th:block>
+<th:block th:fragment="FusionJS">
     <script th:src="@{/contents/js/fusion/fusion.js}"></script>
     <script th:src="@{/contents/js/fusion/fusion.navbar.js}"></script>
 </th:block>

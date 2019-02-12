@@ -6,17 +6,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/auth")
-public class AuthController {
-
-    @GetMapping("/login")
-    public String login(Model model) {
-        return "/auth/login"
-    }
+@RequestMapping("/")
+public class GeneralViewController {
 
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("msg", "demo msg")
         return "/index"
+    }
+
+    @Controller
+    @RequestMapping("/auth")
+    class AuthController {
+        @GetMapping("/login")
+        public String login(Model model) {
+            return "/auth/login :: login"
+        }
     }
 }

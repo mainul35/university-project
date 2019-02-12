@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<!--/*/ <th:block th:include="includes/components :: css"></th:block> /*/-->
+<!--/*/ <th:block th:include="includes/components :: bootstrapCSS"></th:block> /*/-->
 <body>
-<!--/*/ <th:block th:include="includes/header :: header"></th:block> /*/-->
 <div id="root">
-    <br><br><br>
-    <h1 th:text="${msg}"></h1>
 </div>
 </body>
-<!--/*/ <th:block th:include="includes/components :: js"></th:block> /*/-->
+<!--/*/ <th:block th:include="includes/components :: bootstrapJS"></th:block> /*/-->
+<script th:inline="javascript">
+    $.get("/auth/login", function (data) {
+        document.getElementById("root").innerHTML = data
+    });
+</script>
 </html>
