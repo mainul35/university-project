@@ -6,13 +6,16 @@
 </head>
 <!--/*/ <th:block th:include="includes/components :: bootstrapCSS"></th:block> /*/-->
 <body>
+<div id="header"></div>
 <div id="root">
 </div>
 </body>
 <!--/*/ <th:block th:include="includes/components :: bootstrapJS"></th:block> /*/-->
+<!--/*/ <th:block th:include="includes/components :: FusionJS"></th:block> /*/-->
 <script th:inline="javascript">
     $.get("/auth/login", function (data) {
         document.getElementById("root").innerHTML = data
     });
+    Fusion.appBody.navbar.initialize(document.getElementById('header'))
 </script>
 </html>
