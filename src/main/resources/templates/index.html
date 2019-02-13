@@ -16,6 +16,6 @@
     $.get("/auth/login", function (data) {
         document.getElementById("root").innerHTML = data
     });
-    Fusion.appBody.navbar.initialize()
+    Fusion.appBody.navbar.initialize(document.getElementById('header'))
 </script>
 </html>
