@@ -3,8 +3,11 @@ Fusion.appBody.navbar = (function () {
     var items = []
     return {
         initialize: function () {
-            var navContent = Fusion.appBody.navbar.nav.content
-            navContent.innerHTML = ''
+            var navContent = ''
+            $.get("/header", function (data) {
+                document.getElementById("header").innerHTML = data
+            });
+            navContent = document.querySelector(".navbar-nav")
             items = [
                 {
                     label: "Home",
@@ -23,9 +26,8 @@ Fusion.appBody.navbar = (function () {
             navContent.innerHTML += element
         },
         nav: {
-            content: document.querySelector(".navbar-nav"),
             addItem: function (item) {
-                var navContent = Fusion.appBody.navbar.nav.content
+                var navContent = document.querySelector(".navbar-nav")
                 items.push(item)
                 navContent.innerHTML += Fusion.appBody.navbar.nav.buildItem(item)
             },

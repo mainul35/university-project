@@ -15,12 +15,18 @@ public class GeneralViewController {
         return "/index"
     }
 
+    @GetMapping("/header")
+    public String navbar(Model model) {
+        model.addAttribute("msg", "demo msg")
+        return "includes/header :: header"
+    }
+
     @Controller
     @RequestMapping("/auth")
     class AuthController {
         @GetMapping("/login")
-        public String login(Model model) {
-            return "/auth/login :: login"
+        public String login() {
+            return "/includes/auth :: login"
         }
     }
 }

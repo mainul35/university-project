@@ -1,10 +1,8 @@
 Fusion = (function () {
     return {
-        appBody: {
-            initialize: function(){
-
-            },
-            content: document.querySelector("#root"),
-        },
+        appBody: document.querySelector("#root"),
+        htmlToDOMElement: function (htmlString) {
+            return new DOMParser().parseFromString(htmlString, "text/html")
+        }
     };
 }())
