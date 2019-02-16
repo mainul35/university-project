@@ -12,3 +12,4 @@ out/
 .classpath
 .git/
 target/
+src/main/resources/static/contents/js/fusion/
