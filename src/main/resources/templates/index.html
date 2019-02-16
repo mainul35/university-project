@@ -13,9 +13,8 @@
 <!--/*/ <th:block th:include="includes/components :: bootstrapJS"></th:block> /*/-->
 <!--/*/ <th:block th:include="includes/components :: FusionJS"></th:block> /*/-->
 <script th:inline="javascript">
-    $.get("/auth/login", function (data) {
-        document.getElementById("root").innerHTML = data
-    });
-    Fusion.appBody.navbar.initialize(document.getElementById('header'))
+    (function () {
+        Fusion.initialize()
+    }())
 </script>
 </html>
