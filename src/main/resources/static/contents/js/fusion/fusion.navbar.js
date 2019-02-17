@@ -1,5 +1,6 @@
 Fusion.appBody.navbar = (function () {
 
+    var items = []
     var template = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +36,11 @@ Fusion.appBody.navbar = (function () {
             <!--</form>-->
         </div>
     </nav>`
-
-    var items = []
     return {
-        initialize: function () {
+        content: template,
+        initialize: function (container) {
             var navContent = Fusion.htmlToDOMElement(template)
-            var navItems = navContent.querySelector(".navbar-nav")
-            navItems.innerHTML = ''
+            navContent.querySelector(".navbar-nav").innerHTML = ''
             items = [
                 {
                     label: "Home",
@@ -57,8 +56,8 @@ Fusion.appBody.navbar = (function () {
             items.forEach(function (item) {
                 element += Fusion.appBody.navbar.nav.buildItem(item)
             })
-            navItems.innerHTML += element
-            document.getElementById("header").innerHTML = navContent.innerHTML
+            navContent.querySelector(".navbar-nav").innerHTML = element
+            Fusion.pages.login.content = container.innerHTML = navContent.querySelector('body').innerHTML
         },
         nav: {
             addItem: function (item) {
