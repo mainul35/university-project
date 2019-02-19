@@ -37,8 +37,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
             .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT")
             .scopes("read", "write", "trust")
             .secret("secret")
-            .accessTokenValiditySeconds(60*5).//Access token is only valid for 2 minutes.
-            refreshTokenValiditySeconds(60*60);//Refresh token is only valid for 10 minutes.
+            .accessTokenValiditySeconds(60*60*2).//Access token is only valid for 2 Hours.
+            refreshTokenValiditySeconds(60*60);//Refresh token is only valid for 1 Hour.
 	}
 
 	@Override
