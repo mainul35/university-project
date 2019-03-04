@@ -15,6 +15,12 @@ public class GeneralViewController {
         return "/index"
     }
 
+    @GetMapping("/404")
+    public String notFound(Model model) {
+        model.addAttribute("msg", "demo msg")
+        return "/index"
+    }
+
     @GetMapping("/header")
     public String navbar(Model model) {
         model.addAttribute("msg", "demo msg")
