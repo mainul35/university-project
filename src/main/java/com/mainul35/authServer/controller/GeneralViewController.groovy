@@ -18,7 +18,7 @@ public class GeneralViewController {
     @GetMapping("/404")
     public String notFound(Model model) {
         model.addAttribute("msg", "demo msg")
-        return "/index"
+        return "/404"
     }
 
     @GetMapping("/header")

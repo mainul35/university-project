@@ -8,10 +8,8 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @Import(value={SecurityWebApplicationInitializer.class})
-@ImportResource("classpath:error-pages-config.xml")
 public class AuthorizationServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AuthorizationServerApplication.class, args);
-
 	}
 }
