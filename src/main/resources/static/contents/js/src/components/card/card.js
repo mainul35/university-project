@@ -8,4 +8,20 @@ card = (function () {
                     <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
         </div>`
+    return {
+        initialize: function (data = {}) {
+            var content = Fusion.htmlToDOMElement(template)
+            Fusion.addCSS('src/components/card/card.css')
+            if (data.src) {
+                content.querySelector('.card-img-top')[0].src = data.src
+            }
+            if (data.title) {
+                content.querySelector('.card-title')[0].innerHTML = data.title
+            }
+            if (data.text) {
+                content.querySelector('.card-text')[0].innerHTML = data.text
+            }
+            return content
+        }
+    }
 }())
